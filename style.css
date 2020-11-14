@@ -1,484 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
-
+/* CSS Reset */
 *{
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
 }
 html{
-    font-size: 62.5%;
-}
-body{
-    font-family: 'Montserrat', sans-serif;
-    
-}
-ul li{
-    list-style: none;
-}
-a{
-    font: size 1.6rem;
-    text-decoration: none;
-}
-p.li{
-    font-size: 1.6rem;
-    margin-bottom: 0.5em;
-  letter-spacing: 0.5%;
-}
-h1,h2,h3{
-    margin-bottom: 0.5em;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-}
-.container{
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-}
-.lg-heading{
-    font-size: 3.5rem;
-}
-.md-heading{
-    font-size: 2.2rem;
-}
-.text-red{
-    color: #e63946;
-}
-.text-light{
-    color: #f4f4f4;
-}
-.text-black{
-    color: #333333;
-}
-.text-gray{
-    color: #555555;
-}
-.bg-dark{
- background-color: #263238;
+  scroll-behavior: smooth;
 }
 
-.btn{
-    display: inline-block;
-    padding: 0.5em 1.5em;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin: 0.5em 0;
-}
-.btn-primary{
-    background-color: #fff;
-    border-radius: 100px;
-}
-.btn-primary:hover{
-    background-color: #ddd;
-}
-.btn-secondry{
-    border: 2px solid #e63946;
-    border-radius: 16px;
-    color:#e63946;
-    background: #fff;
-   
-}
-.btn-secondry:hover{
-    background-color:gray;
-}
-h{
-    margin: 50x 0px 0px 40px;
+/* CSS Variables */
+:root{
+    --navbar-height: 59px;
 }
 
-.header{
-    position: relative;
-    height: 95vh;
-    background:url('./header-image.jpg');
-    background-position: center ;
-    background-size: cover;
-    background-repeat: no-repeat;  
-}
+/* Navigation Bar */
 .navbar{
- 
-    padding: 1rem;
+    display: flex;     /*ul ko ek line mye kr dyeta h*/
+    align-items: center;
+    position: relative; /*navbar ko image kye uppar kr dyeta h*/   /*navbar position-stickykarnye pr scroll kye sath nichye aayega*/
+    top: 0px;   /* isko likha jayega jb navbar uppar karna hoga */
 }
- 
-.navbar .logo
-{
-    float: left;
-}
-.navbar .nav-items{
-    float: right;
-    margin-top: 1rem;
-}
-.navbar .nav-item{
-    display: inline-block;
-    padding: 1rem;
-    text-transform: uppercase;
-}
-.navbar a:link,
-.navbar a:visited{
-    color: #f4f4f4;
-}
-.navbar a{
-    padding-bottom:0.3rem;
-}
-.navbar a:hover{
-    border-bottom: 1px solid #fff;
-}
-.navbar::after{
-    content:'';
-    display: block;
-    clear: both;
- }
-.header-content h1{
-    text-transform: uppercase;
-    font-weight: 700;
-    
-
-}
-.header-content{
-    position: absolute;
-    text-align: center;
-    /* border: 2px solid white; */
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,o,rgba(0,0,0,.2)));
-
-    
-}
-.header-content p{
-    text-transform: uppercase;
-}
- .showcase{
-    background:#ddd;
-    padding: 10rem 0;
-  }
-.row{
-    height: 250px;
-
-    background: #fff;
-     box-shadow: 0px 0px 20px 0px #aaa;
-}
-.row1{
-    margin-bottom: 10rem;
-}
-.row1 .img-box, .row2 .text-box{
-    float:left;
-    width:50%;
-}
-.row2 .img-box, .row1 .text-box{
-    float:right;
-    width:50%;
-}
-.row .img-box{
-    
+.navbar::before{
+    content:"";
+    background-color: black;
+    position: absolute;       /*navbar kye option ko arrange karta h*/
+    top: 0px;
+    left: 0px;
     height: 100%;
-}
-.row .txt-box{
-
-    padding: 3rem;
-}  
-.m{
-    margin: 0px 200px;
-    
-}
-.row .img-box img{
-    display: inline-block;
     width: 100%;
-    height:100%;
-    object-fit: cover;
-}
-.row::after{
-    content:'';
-    display: block;
-    clear:both;
-}
-.features{
-    
-    padding: 10rem 0;
-}
-.box-wrapper{
-   box-shadow: 5px 5px 50px 0px #aaa;
-}
-.box{
-    width: 33.33333%;
-    float: left;
-    padding: 2rem;
-    text-align: center;
-} 
- .box-1, .box-3{
-     background-color: #263238;
-     color: #fff;
- }
- .box-2{
-    background:linear-gradient(25deg,#12b8b2,#ee4758 50%);
-    color:#fff;
- }
-.box-wrapper::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-.footer{
-    background: #263238;
-    color: #f4f4f4;
-    padding:2rem;
-    text-align: center;
-
-}
-.social-media-links i{
-    margin:2rem;
-    size: 3px;
-}
-h4{
-    margin: 50px 0px 40px 0px 0px;
-}
-.about{
-    padding: 5rem 0rem;
-}
-.about-heading::after{
-    content:'';
-    display: block;
-    border-bottom: 3px solid #e63946;
-    width:100%;
-}
-.about-wrapper{
-   
-    text-align: center;
-    margin-top: 2rem;
-    
-}
-.about-wrapper .left{
-
-    float: left;
-    width: 50%;
-    
+    z-index: -1;    /*content uppar aa jata h */
+    opacity: 0.6;    /*color kye liye h*/
 }
 
-.about-wrapper .right{
-    
-    float: right;
-    width: 50%;
-
+/*Navigation Bar Logo and Image */
+.logo{
+       margin: 34px 45px;
+}
+.logo img{
+    height: 75px;
+        margin: -10px -21px;   
 }
 
-.about-wrapper::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-.about-wrapper li::before{
-    content: '\2713';
-    color: #e63946;
-    font-weight: bold;
-    padding-right: 2rem;
-}
-.counts{
-    margin-top: 3rem;
+/*Navigation Bar List Styling */
 
-}
-.count-item{
-
-    width: 25%;
-    float: left;
-    text-align: center;
-}
-.counts:after{
-    content: '';
-    display: block;
-    clear: both;
-}
-.count-item span{
-    font-size: 3rem;
-    font-weight: 700;
-    color: #e63946;
-    font-size: 1.8rem;
-
-}
-.count-item p{
-    font-weight: 700;
-    color: gray;
-    
-}
-.cta-banner{
-    
-    background:linear-gradient(25deg,#d64c7f,#ee4758 50%);
-    color: #f4f4f4;
-    margin: 40px 50px;
-    padding: 1rem;
-    
-    box-shadow: 5px 5px 10px #000000;
-    
-}
-.cta-banner-left{
-    width: 60%;
-    float: left;
-}
-.cta-banner-right{
-    width:40%;
-    float: right;
-    text-align: right;
-
-}
-,ctl-line{
-    font-weight: 700;
-    font-size: 2rem;
-    margin-top: 1.5rem;
-}
-.btn-cta{
-    text-align: center;
-    display: inline-block;
-    font-weight: 700;
-    font-size: 2rem;
-    text-transform: uppercase;
-    border: 4px solid white;
-    padding: 0.3rem 2.5em;
-    letter-spacing: 0.5rem;
-    color: #f4f4f4;
-  margin-top: 3rem;
-}
-
-.cta-banner::after{
-    content:'';
-    display: block;
-    clear: both;
-    
-}
-/* #####################contact page############ */
-.contact-form{
-    padding: 5rem 0rem;
-    background: #f7f7f7;
-    
+.navbar ul{
+    display: flex;
+    font-family: 'Baloo Bhai 2', cursive;
    
 }
-.form-wrapper::after{
-    content: '';
-    display: block;
-    clear: both;
-}
-.form-wrapper .company-address{
-    height: 760px;
-    background: #fff;
-    
-    width: 49%;
-    float: left;
-    padding: 2rem;
-   
-}
-.form-wrapper .company-address i{
-    display: inline-block;
-    margin-right: 1rem;
-}
-.form-wrapper .company-address h2{
-    display: inline-block;
-    text-transform: uppercase;
-}
- .form-wrapper .address-group{
-     margin-bottom: 3rem;
- }
- .form-wrapper .company-address img{
-     max-width: 90%;
-     min-height:40rem;
-     object-fit: cover;
-     object-position: right;
- }
-/* #############form style########### */
-.form-wrapper .form{
-    height: 760px;
-    font-size: 1.6rem;
-    background: #fff;
-    
-    width:49%;
-    float: right; 
-    padding: 1rem;  
-}
 
-.form h1::after{
-    content: "";
-    display:block;
-    border: 3px solid #ee4758;
+.navbar ul li{
+    
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+.navbar ul li a{
+    color: #050101;
+   display: block;
+   padding: 3px 22px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+.navbar ul li a:hover{
+    color: black;
+    background-color: white;
+}
+  /* Home section */
+  .home{
+      display: flex;
+      flex-direction: column;
+      padding: 3px 200px;
+      height: 489px;
+      justify-content: center;    /*ye dono milkar text ko center mye lye aatye h home kye*/
+      align-items: center;           /*     "same"                                             */
+  }
+  
+  .home::before{
+   
+    content:"";
+    position: absolute;
+    background:url('./paneer.jpg') no-repeat center center/cover;
+    height: 642px;
+    top: 0px;   /*navbar ko uppar lye aata h background image sye*/
+    left: 0px; 
     width: 100%;
+    z-index: -1;    /*content uppar aa jata h */
+    opacity: 0.89;    /*color kye liye h*/
+  }
+  .home h1{
+    color:black;
+      text-align: center;
+      font-family: 'Bree Serif', serif;
+  }
+  .home p{
+    
+      color:rgb(55, 245, 7);
+      text-align: center;
+      font-size: 1.5rem;
+      font-family: 'Galada', cursive;
+   
+
+  }
+  /* services section     */
+  .services{
+      margin: 34px;
+      display: flex;      /*agr list mye likha ho tb usye ek line mye karnye kye liye use kartye h*/
+  }
+  .services .box{ 
+      border: 2px solid brown;
+      padding: 34px;
+      margin: 3px 6px;
+      border-radius: 28px;
+      background:#dcd0c980;
+      
+      
+
+  }
+  .services .box img{   /*image set ho rahi h*/
+    height: 109px;
+    margin: auto;           /*image ko box mye center pr lanye kye liye kartye h*/
+    display: block;       /* jaha margin auto deyegye waha display block kar dyegye*/
+  }
+  .services .box p{
+    font-family: 'Galada', cursive;
+  }
+  /*client section*/
+.client-section{
+     
+     position: relative;   /* jitni jarurat hogi siraf utni jagh lyga*/
 }
-.form-wrapper .form label{
-    display: block;
+.client-section::before{
+     content: "";
+     position: absolute;
+     background: url('table.jpg');
+     width: 100%;
+     height: 100%;        /*54*/
+     z-index: -1;   /*background image kye sath jo uppar ho uskye usko set kiya jata h ki kaisa dikhyega */
+    opacity: 1;   
+    }
+.clients{
+    display: flex;
+    justify-content: center;
+  
+    text-align: center;
 }
-.form-wrapper .form input{
-    padding: 0.5rem;
-    width: 100%;
+.client-item{
+  padding: 34px;
+
 }
-.form-wrapper .form-group{
-    margin-bottom: 1.2rem;
+.clients img{
+  height: 124px;
 }
-.form-wrapper .form label::after{
-content: "*";
-color: #e63946;
-}
-.form-wrapper .form textarea{
-    width: 100%;
-    height: 300px;
-    padding: 1rem;
-}
-.form-btn{
-    display: block;
-    margin: 0 auto;
-    padding: 0.5em 3em;
-    font: size 1.8rem;
-    text-transform: uppercase;
-    background: #e63946;
-    color: #fff;
-    outline: none;
-    border: none;
+    /* contact section */
+   .contact{
+     position: relative;
+   }
+   .contact::before{
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     opacity: 0.7;
+     background: url('contact.jpg') no-repeat center center/cover;
+   }
+   .contact-box{      
+     display: flex;   /* iska use hum is liye kartye ki sab chij center pr aa sakye*/
+     justify-content: center;
+     align-items: center;
+     padding-bottom: 34px;
+   }
+   .contact-box input,     /*form ko design kiya gaya h*/
+   .contact-box textarea{
+     width: 100%;
+     padding: 0.5rem;
+     border-radius: 9px;
+     font-size: 1.1rem;
+   }
+   .contact-box form{
+     width: 40%;
+     
+   }
+   .contact-box label{
+     font-size: 1.3rem;
+     font-family: 'Bree Serif', serif;
+
+   }
+   footer{
+     background: black;
+     color: white;
+     padding: 9px 20px;
+   }
+
+  /*utility classes*/
+  .h-primary{
+    font-family: 'Bree Serif', serif;
+      font-size: 3.8rem;
+      padding:12px;
+  }
+  .h-secondary{
+    font-family: 'Bree Serif', serif;
+      font-size: 2.3rem;
+      padding:12px;
+  }
+.btn{                 /*btn ko sajaya gaya*/
+    padding: 6px 20px;
+    border: 2px solid  brown;
+    color: rgba(250, 0, 229, 0.767);
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
     cursor: pointer;
 }
-/* ############## media queries####### */
-@media(max-width:500px){
-    html{
-        font-size: 50%;
-    }
-    .navbar .nav-item, .navbar .logo{
-        float: none;
-        display: block;
-        text-align: center;
+.center{
+    text-align: center;
+}   
   
-    }
-   .header-content .md-heading{
-       display: none;
-   }
-   .row{
-       height: auto;
-       width: 100%;
-     } 
-     .row .img-box,
-     .row .text-box{
-         float: none;
-         width: 100%;
-         text-align: center;
-         
-     }
-     .features .box{
-         float: none;
-         width: 100%;
-         text-align: center;
-         box-shadow: 5px 5px 10px rgba(102,102,102,0.521);
-     }
-     .features .box-2,
-     .features .box-3{
-         margin-top: 7rem;
-     }
-     .box-wrapper{
-        box-shadow:none;
-     }
-     .cta-banner-left,
-     .cta-banner-right{
-         float: none;
-         width: 100%;
-         text-align: center;
-     }
-     .form-wrapper .company-address{
-         float: none;
-         width: 100%;
-         height: auto;
-         margin-bottom: 5rem;
-     }
-     .form-wrapper .form{
-         float: none;
-         width: 100%;
-         height: auto;
-     }
-  }
